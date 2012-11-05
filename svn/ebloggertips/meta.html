@@ -1,0 +1,68 @@
+<head>
+
+<title>Meta Tag Generator Tool</title>
+
+<script type='text/javascript'>
+
+//<![CDATA[
+
+//Character count script
+function countit(what){
+formcontent=what.form.charcount.value
+what.form.displaycount.value=formcontent.length
+}
+
+
+function create(form) {
+  if (confirm("Are you sure?")) {
+    form.story.value = "Copy the codes below and insert them " +
+      "between the <head> </head> Tag.\n\n"; 
+    if (form.input1.value != "") {
+      form.story.value +="<b:if cond='data:blog.url == data:blog.homepageUrl'>\n<META NAME=\"Description\" CONTENT=\"" + 
+      form.input1.value + "\" />\n</b:if>\n";
+    }
+    if (form.input2.value != "") {
+      form.story.value +="<META NAME=\"Keywords\" CONTENT=\"" + 
+      form.input2.value + "\" />\n";
+    }
+    if (form.input3.value != "") {
+      form.story.value +="<META NAME=\"Author\" CONTENT=\"" + 
+      form.input3.value + "\" />\n";
+    }
+    if (form.input4.value != "") {
+      form.story.value +="<META NAME=\"Robots\" CONTENT=\"" + 
+      form.input4.options[form.input4.selectedIndex].value + "\" />\n";
+    }
+  }
+}
+
+function about() {
+
+  msg=open("about.html","DisplayWindow","toolbar=no,width=200,height=420,directories=no,status=no,scrollbars=yes,resize=no,menubar=no");
+}
+
+// end hiding contents from old browsers  -->
+
+
+//]]>
+</script>
+</head>
+
+<body>
+<left><table><tbody>
+<tr><td><form><div align="left"><br>
+<left><table border="0" cellpadding="2"><tbody>
+<tr><td><span style="color: rgb(60, 60, 60); font-weight: bold;">Description:</span></td> <td><input class="b4e1" name="input1" size="40" type="text"></td> </tr>
+<tr><td><span style="color: rgb(60, 60, 60); font-weight: bold;">Keywords:</span></td> <td><input class="b4e1" name="input2" size="40" type="text"></td></tr>
+<tr><td><span style="color: rgb(60, 60, 60); font-weight: bold;">Author (Optional):</span></td> <td><input class="b4e1" name="input3" size="40" type="text"></td></tr>
+<tr><td><span style="color: rgb(60, 60, 60); font-weight: bold;">Robots (Optional):</span></td>   <td><select name="input4" size="1">  <option selected="selected" value="All">All </option>    <option value="None">None </option>  <option value="Index">Index </option>  <option value="No Index">No Index </option>     <option value="Follow">Follow </option> <option value="No Follow">No Follow </option>     </select></td>  </tr>
+
+</tbody></table></left></div><br>
+<textarea cols="50" name="story" rows="12" wrap=""></textarea> <br>
+<div style="text-align: right;"><input class="b4e2" onclick="create(this.form)" value="Create Meta tags" type="button"><input class="b4e2" value="Clear All" type="reset"> </div><div style="text-align: right;"></div></form></td>   </tr>
+</tbody></table></left>
+<center>
+Copyright &copy; 2012 by Olusegun @ <a rel="dofollow" href="http://www.justnaira.com">JustNaira Blog</a>.All Rights Reserved
+</center>
+
+</body>
