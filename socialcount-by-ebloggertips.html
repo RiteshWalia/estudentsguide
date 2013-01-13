@@ -9,12 +9,56 @@
   	<!-- scripts would be better placed below near the </body> -->
 		<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
  		<script src="http://fgte.st/SocialCount/src/socialcount.js"></script>
-  	<style>
+  	    <style>
 			html {
 				font: 100% Helvetica, sans-serif;
 			}
-		</style>
-		
+			* {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			table {
+				margin: 1em 0;
+			}
+			th {
+				text-align: left;
+			}
+			th:after {
+				content: ':';
+			}
+			th, td {
+				font-size: .8125em;
+			}
+			h3 {
+				clear: both;
+			}
+			code,
+			textarea {
+				font-family: Consolas, Monaco, monospace;
+			}
+			form {
+				display: none;
+			}
+			.js form {
+				display: block;
+			}
+			fieldset {
+				border: none;
+			}
+			legend {
+				font-style: italic;
+			}
+			input[type="text"],
+			textarea {
+				width: 80%;
+				min-width: 280px;
+			}
+			textarea {
+				height: 200px;
+				tab-size: 2;
+			}
+		</style>		
 		
 		<script>
 		$(function() {
