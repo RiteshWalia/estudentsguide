@@ -30,11 +30,11 @@
 			}, function() {
 				$(this).stop().animate({'marginLeft': '0px'}, 500);
 			});
-			var minTop = 230;
+			var minTop = 130;
 			$(window).scroll(function(){
 				var position = $(window).scrollTop();
 				if(position < minTop) {
-					el.stop().animate({'top': 230}, 500);
+					el.stop().animate({'top': 130}, 500);
 				} else {
 					el.stop().animate({'top': parseInt(position)+10}, 500);
 				}
