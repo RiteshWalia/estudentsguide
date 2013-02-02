@@ -17,7 +17,7 @@
 			var minus = parseInt(parseInt(options.thumbWidth) / 3);
 			$(el).css({
 				'position': 'absolute',
-				'top': '230px',
+				'top': '130px',
 				'left': -minus + 'px',
 				'width': options.thumbWidth + 'px',
 				'opacity': options.opacity
@@ -26,17 +26,17 @@
 			}, function() {
 				$(this).stop().fadeTo('fast', options.opacity);
 			}).append(html).find('a').hover(function() {
-				$(this).stop().animate({'marginLeft': '18px'}, 'fast');
+				$(this).stop().animate({'marginLeft': '30px'}, 'fast');
 			}, function() {
-				$(this).stop().animate({'marginLeft': '0px'}, 500);
+				$(this).stop().animate({'marginLeft': '0px'}, 300);
 			});
 			var minTop = 130;
 			$(window).scroll(function(){
 				var position = $(window).scrollTop();
 				if(position < minTop) {
-					el.stop().animate({'top': 130}, 500);
+					el.stop().animate({'top': 130}, 300);
 				} else {
-					el.stop().animate({'top': parseInt(position)+10}, 500);
+					el.stop().animate({'top': parseInt(position)+10}, 300);
 				}
 			});
 		},
