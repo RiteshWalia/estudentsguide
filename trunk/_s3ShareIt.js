@@ -26,11 +26,11 @@
 			}, function() {
 				$(this).stop().fadeTo('fast', options.opacity);
 			}).append(html).find('a').hover(function() {
-				$(this).stop().animate({'marginLeft': '120px'}, 'fast');
+				$(this).stop().animate({'marginLeft': '220px'}, 'fast');
 			}, function() {
-				$(this).stop().animate({'marginLeft': '120px'}, 200);
+				$(this).stop().animate({'marginLeft': '220px'}, 200);
 			});
-			var minTop = 130;
+			var minTop = 100;
 			$(window).scroll(function(){
 				var position = $(window).scrollTop();
 				if(position < minTop) {
