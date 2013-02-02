@@ -1,7 +1,9 @@
 (function($) {
 
 	var methods = {
+		links: null,
 		create: function(options) {
+			this.generateLinks(options);
 			if($('#s3ShareIt', $(options.el))) {
 				var el = $('#s3ShareIt', $(options.el));
 			} else {
@@ -17,7 +19,7 @@
 			var minus = parseInt(parseInt(options.thumbWidth) / 3);
 			$(el).css({
 				'position': 'absolute',
-				'top': '100px',
+				'top': '230px',
 				'left': -minus + 'px',
 				'width': options.thumbWidth + 'px',
 				'opacity': options.opacity
@@ -26,31 +28,32 @@
 			}, function() {
 				$(this).stop().fadeTo('fast', options.opacity);
 			}).append(html).find('a').hover(function() {
-				$(this).stop().animate({'marginLeft': '220px'}, 'fast');
+				$(this).stop().animate({'marginLeft': '18px'}, 'fast');
 			}, function() {
-				$(this).stop().animate({'marginLeft': '220px'}, 200);
+				$(this).stop().animate({'marginLeft': '0px'}, 500);
 			});
-			var minTop = 100;
+			var minTop = 230;
 			$(window).scroll(function(){
 				var position = $(window).scrollTop();
 				if(position < minTop) {
-					el.stop().animate({'top': 100}, 200);
+					el.stop().animate({'top': 230}, 500);
 				} else {
-					el.stop().animate({'top': parseInt(position)+10}, 200);
+					el.stop().animate({'top': parseInt(position)+10}, 500);
 				}
 			});
-		},
-		
-		links: {
-			'twitter': '<a target="_blank" title="Twitt it!" href="http://twitter.com/home?status='+ $('title').html() +'+-+'+ document.location +'"><img alt="twitter" src="https://sites.google.com/site/estudentsguide/file-cabinet/twitter.png"></a>',
-			'facebook': '<a target="_blank" title="Share on Facebook" href="http://www.facebook.com/sharer.php?u='+ document.location +'"><img alt="facebook" src="https://sites.google.com/site/estudentsguide/file-cabinet/facebook.png"></a>',
-			'digg': '<a target="_blank" title="Submit to Digg" href="http://digg.com/submit?phase=2&amp;url='+ document.location +'"><img alt="digg" src="https://sites.google.com/site/estudentsguide/file-cabinet/digg.png"></a>',
-			'delicius': '<a target="_blank" title="Submit to Delicius" href="http://del.icio.us/post?url='+ document.location +'"><img alt="delicious" src="https://sites.google.com/site/estudentsguide/file-cabinet/delicious.png"></a>',
-			'stumbleupon': '<a target="_blank" title="Submit to StumpleUpon" href="http://www.stumbleupon.com/submit?url='+ document.location +'"><img alt="stumbleupon" src="https://sites.google.com/site/estudentsguide/file-cabinet/stumbleupon.png"></a>',
-			'reddit': '<a target="_blank" title="Submit to Reddit" href="http://reddit.com/submit?url='+ document.location +'"><img alt="reddit" src="/img/s3ShareIt/reddit.png"></a>',
-			'technorati': '<a target="_blank" title="Share on Technorati" href="http://technorati.com/faves?add='+ document.location +'"><img alt="technorati" src="/img/s3ShareIt/technorati.png"></a>',
-			'linkedin': '<a target="_blank" title="Share on LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&url='+ document.location +'&title='+ $('title').html() +'"><img alt="linkedin" src="/img/s3ShareIt/linkedin.png"></a>',
-			'myspace': '<a target="_blank" title="Share on MySpace" href="http://www.myspace.com/index.cfm?fuseaction=postto&t=&c=&u='+ document.location +'&l="><img alt="facebook" src="/img/s3ShareIt/myspace.png"></a>',
+		},		
+		generateLinks: function(options) {
+			this.links = {
+				'twitter': '<a target="_blank" title="Twitt it!" href="http://twitter.com/home?status='+ $('title').html() +'+-+'+ document.location +'"><img alt="twitter" src="' + options.iconsPath + '/twitter.png"></a>',
+				'facebook': '<a target="_blank" title="Share on Facebook" href="http://www.facebook.com/sharer.php?u='+ document.location +'"><img alt="facebook" src="' + options.iconsPath + '/facebook.png"></a>',
+				'digg': '<a target="_blank" title="Submit to Digg" href="http://digg.com/submit?phase=2&amp;url='+ document.location +'"><img alt="digg" src="' + options.iconsPath + '/digg.png"></a>',
+				'delicius': '<a target="_blank" title="Submit to Delicius" href="http://del.icio.us/post?url='+ document.location +'"><img alt="delicious" src="' + options.iconsPath + '/delicious.png"></a>',
+				'stumbleupon': '<a target="_blank" title="Submit to StumpleUpon" href="http://www.stumbleupon.com/submit?url='+ document.location +'"><img alt="stumbleupon" src="' + options.iconsPath + '/stumbleupon.png"></a>',
+				'reddit': '<a target="_blank" title="Submit to Reddit" href="http://reddit.com/submit?url='+ document.location +'"><img alt="reddit" src="' + options.iconsPath + '/reddit.png"></a>',
+				'technorati': '<a target="_blank" title="Share on Technorati" href="http://technorati.com/faves?add='+ document.location +'"><img alt="technorati" src="' + options.iconsPath + '/technorati.png"></a>',
+				'linkedin': '<a target="_blank" title="Share on LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&url='+ document.location +'&title='+ $('title').html() +'"><img alt="linkedin" src="' + options.iconsPath + '/linkedin.png"></a>',
+				'myspace': '<a target="_blank" title="Share on MySpace" href="http://www.myspace.com/index.cfm?fuseaction=postto&t=&c=&u='+ document.location +'&l="><img alt="facebook" src="' + options.iconsPath + '/myspace.png"></a>',
+		}
 		}
 	};
 
@@ -69,7 +72,8 @@
 				'myspace': true,
 				'opacity': 1,
 				'el': this,
-				'thumbWidth': 48
+				'thumbWidth': 48,
+				'iconsPath': 'http://www.serie3.info/img/s3ShareIt/'
 			}
 			options = $.extend(true, defaults, options);
 			methods.create(options);
@@ -78,3 +82,4 @@
 	};
 
 })(jQuery);
+
