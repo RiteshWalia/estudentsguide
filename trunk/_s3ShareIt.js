@@ -28,7 +28,7 @@
 			}).append(html).find('a').hover(function() {
 				$(this).stop().animate({'marginLeft': '120px'}, 'fast');
 			}, function() {
-				$(this).stop().animate({'marginLeft': '0px'}, 200);
+				$(this).stop().animate({'marginLeft': '120px'}, 200);
 			});
 			var minTop = 130;
 			$(window).scroll(function(){
