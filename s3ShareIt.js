@@ -45,8 +45,8 @@
 		generateLinks: function(options) {
 			this.links = {
 				'twitter': '<a target="_blank" title="Twitt it!" href="http://twitter.com/home?status='+ $('title').html() +'+-+'+ document.location +'"><img alt="twitter" src="' + options.iconsPath + '/twitter.png"></a>',
-				'facebook': '<a target="_blank" title="Share on Facebook" href="http://www.facebook.com/sharer.php?u='+ document.location +'"><img alt="facebook" src="' + options.iconsPath + '/facebook.png"></a>',
-				'digg': '<a target="_blank" title="Submit to Digg" href="http://digg.com/submit?phase=2&amp;url='+ document.location +'"><img alt="digg" src="' + options.iconsPath + '/digg.png"></a>',
+				'facebook': '<a target="_blank" title="Share on Facebook" href="http://www.facebook.com/sharer.php?u='+ document.location +'"><img alt="facebook" src="http://4.bp.blogspot.com/-suzVChmt8q0/UQy_MAfiKSI/AAAAAAAABYI/KdCof4i60ak/s1600/facebook.png"></a>',
+				'digg': '<a target="_blank" title="Submit to Digg" href="http://digg.com/submit?phase=2&amp;url='+ document.location +'"><img alt="digg" src="http://1.bp.blogspot.com/-dAdNEVjbZ1U/UQy_MH4I1xI/AAAAAAAABYQ/Wr9THhGD8qA/s1600/digg.png"></a>',
 				'delicius': '<a target="_blank" title="Submit to Delicius" href="http://del.icio.us/post?url='+ document.location +'"><img alt="delicious" src="' + options.iconsPath + '/delicious.png"></a>',
 				'stumbleupon': '<a target="_blank" title="Submit to StumpleUpon" href="http://www.stumbleupon.com/submit?url='+ document.location +'"><img alt="stumbleupon" src="' + options.iconsPath + '/stumbleupon.png"></a>',
 				'reddit': '<a target="_blank" title="Submit to Reddit" href="http://reddit.com/submit?url='+ document.location +'"><img alt="reddit" src="' + options.iconsPath + '/reddit.png"></a>',
